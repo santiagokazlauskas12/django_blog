@@ -1,0 +1,46 @@
+{% extends 'mainapp/layout.html' %}
+{%load static%}
+
+
+    {%block title%}
+      Mis articulos
+    {% endblock %}	 
+
+
+{%block content%} 
+
+<h3>Mis Articulos </h3>
+</br>
+<strong style="color:red"> {{user.username}} </strong>
+</br>
+<div style="margin-top:10px; margin-bottom:10px"><a href="{% url 'new_articles'%}"> Crear nuevo articulo </a></div>
+
+<hr/>
+<div style="margin-top:10px; margin-bottom:10px">
+{%if messages%}
+
+ {%for message in messages %} 
+
+    {{message}}
+ {%endfor%}   
+{%endif%}    
+</div>
+
+<p> En esta pagina podras ver todos tus articulos </p> 
+
+    {%for art in page_paginator %}
+     <div class="article" > 
+         {{art.title}} <br/>
+        {{art.article|safe}}
+        <br/>
+        
+        <a href="{%url "delete_article" art.title%}"> Eliminar </a>
+        <hr/>
+        
+     </div>
+    {%endfor%}    
+
+{%include "mainapp/pagination.html"%}
+       
+
+{%endblock%}

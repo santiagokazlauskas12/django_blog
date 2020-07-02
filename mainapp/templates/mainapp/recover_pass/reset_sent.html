@@ -1,0 +1,20 @@
+{% extends 'mainapp/layout.html' %}
+ {%load static%}
+
+
+{%block title%}
+        Recuperar Contraseña
+{% endblock %}	 
+
+{% block content %}
+
+<h3> Revisa tu mail ! </h3> 
+<p> Hemos enviado un mail con toda la informacion para recuperar tu contraseña </br>
+a tu casilla de correo electronico ! </p></br></br>
+
+<p><strong> No encuentras el email ?</strong> </br>
+No olvides de revisar en la carpeta de spam, o revisa que hayas escrito bien el mail ! </p></br></br>
+
+<p> Si  no puedes solucinoarlo , no dudes en <a href="{% url 'contacto' %}">contactarnos </a> </p>
+
+{% endblock %}

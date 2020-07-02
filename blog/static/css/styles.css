@@ -1,0 +1,110 @@
+* { 
+    margin: 0px;
+    padding: 0px ;
+    text-decoration: none;
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+body {
+
+        background-color: #f2f2f2;
+}
+
+
+ header{ 
+        width:1200px;
+        height: 140px;
+        background-color: rgb(20, 25, 29);
+        margin : 0px auto;
+        color: rgb(68, 141, 117);
+ } 
+
+ nav {
+    width:1240px;
+    height: 40px;
+    background-color: rgb(20, 25, 29);
+    border: 1px solid black;
+    margin:0 auto;
+    box-shadow: 0 22px 22px gray;}
+    
+
+nav ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+nav ul li {
+            line-height: 40px;
+            float:left;
+            
+
+}
+
+nav ul li a {
+            display:block;
+            padding-left : 10px;
+            padding-right: 10px;
+}
+
+nav ul li a:hover {
+                    background-color: rgb(138, 73, 89);
+                    box-shadow: 0px 0px 6px black inset;
+                    transition: 280ms;
+ }
+
+ .barra {
+        width: 1200px;
+        margin: 0 auto;
+  
+ }
+
+ .ezquina_izquierda {
+                        display: block;
+                        border-left: 20px solid transparent;
+                        border-top: 10px solid #2B2F30;
+                        float:left;
+
+
+ }
+
+ .ezquina_izquierda {
+    display: block;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #2B2F30;
+    float:right;
+}
+
+.relleno_barra {
+                width: 1210px;
+                display: block;
+                height: 10;
+                background:  10px solid #2B2F30;
+                float:left;
+}
+
+#content {
+            content:100px;
+            margin: 0 auto;
+            min-height: 900px;
+            margin-bottom: 30px;
+            margin-top: 40px;
+}
+
+.box {
+    background-color: blueviolet;
+    width: 90%;
+    min-height: 500px;
+    padding:20px;
+    border: 2px solid #ddd; 
+    margin: 0 auto;
+}
+
+footer {
+        width: 1200px;
+        border : 1px solid #333;
+        text-align: center;
+        background-color: rgb(20, 25, 29) ;
+        padding-top:10px;
+        padding-bottom: 10px;
+        margin: 0 auto;
+}

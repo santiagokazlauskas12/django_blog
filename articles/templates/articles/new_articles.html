@@ -1,0 +1,28 @@
+{% extends 'mainapp/layout.html' %}
+{%load static%}
+
+
+    {%block title%}
+	    nuevo articulo
+    {% endblock %}	 
+
+
+{%block content%} 
+
+<h3> Crea un nuevo articulo ! </h3> 
+    {{NewArticle_form.errors}}
+    {% for e in NewArticle_form.errors%}
+        {{e}}
+    {%endfor%}    
+
+<form action="" method="POST"> {% csrf_token %}
+    {%for form in NewArticle_form%}
+        {{form.label}}</br>
+        {{form}}</br>
+       
+    {%endfor%}
+  
+    <input type="submit" value="Crear articulo"/>
+</form>       
+
+{%endblock%}

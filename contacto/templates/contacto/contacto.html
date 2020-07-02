@@ -1,0 +1,31 @@
+{% extends 'mainapp/layout.html' %}
+ {%load static%}
+
+
+{%block title%}
+	 {{title}}
+{% endblock %}	 
+
+
+{%block content%}
+    {%if messages%} 
+        {%for message in messages %} 
+                    <span class="message"> <strong> {{message}}</strong> </span>
+            {%endfor%}		   
+
+    {%endif%}
+
+
+    {{form.errors}}
+
+ <form method="POST" action="">
+    {% csrf_token %}
+        {%for l in form %}
+            {{l.label}}<br/>
+            {{l}}<br/>
+        {%endfor%}
+    <input type="submit" value:"Enviar"/>
+
+ </form>
+
+{%endblock%}    

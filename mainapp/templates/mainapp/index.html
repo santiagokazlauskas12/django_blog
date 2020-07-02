@@ -1,0 +1,44 @@
+ {% extends 'mainapp/layout.html' %}
+ {%load static%}
+
+
+{%block title%}
+	 {{title}}
+{% endblock %}	 
+
+
+{%block content%}
+
+
+
+{%if messages%} 
+      {%for message in messages %} 
+        	<span class="message"> <strong> {{message}}</strong> </span>
+	  {%endfor%}		   
+
+{%endif%}
+
+	{%if not user.email%}
+
+	<h1> Inicia Sesion </h1>
+
+	<form method="POST" action="">
+		 {% csrf_token %}
+		<label for="username"> Nombre de Usuario : </label></br>
+		<input type="text" name="username"/> </br>
+		<label for="password">password : </label></br>
+		<input type="password" name="password"/></br>
+
+		<input type="submit" value="Iniciar sesion"/>
+	</form>
+	
+</br>
+</br>
+
+	<h4> No tienes un Usuario ? <a href="{%url 'new_user'%}"> <strong> Crea Uno !</a>   </h4> </br>
+	Olvidaste tu contraseña?? - <a href="{%url 'reset_password'%}" <strong> Recuperala ! </strong><a/>
+		{%else%}
+			<h1> Bienvenido {{user.username}} </h1>
+		{%endif%}	
+
+{%endblock%}

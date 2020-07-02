@@ -1,0 +1,32 @@
+ {% extends 'mainapp/layout.html' %}
+ {%load static%}
+
+
+{%block title%}
+	 {{title}}
+{% endblock %}	 
+
+{%block content%}
+
+<h1> Crea tu usuario </h1>
+<h3> Por favor completa todos los datos </h3>
+	<div class="user-errors">
+	{{create_user.errors}}
+	</div >
+
+	
+	
+	<div class="clearfix"></div>
+
+
+	<form method="POST" action="">
+	{%csrf_token%}
+		{%for create in create_user%}
+			{{create.label}} <br/>
+			{{create}} <br/>
+		 
+		{%endfor%}
+		<input type="submit" value="Crear Usuario"/>
+	</form>	
+
+{%endblock%}

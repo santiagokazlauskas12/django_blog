@@ -1,0 +1,27 @@
+{% extends 'mainapp/layout.html' %}
+{%load static%}
+
+
+    {%block title%}
+	     {{title}}
+    {% endblock %}	 
+
+
+{%block content%} 
+<h3> Estos son todos los articulos de la seccion <span style="color:red;">{{title}}</span> </h3>
+     
+    {%for f in page_paginator%}
+     <div class="article" >
+      
+          Creado por :  <span style="color:red;">{{f.user}}</span>
+           <h4> {{f.title}} </h4>
+            {{f.article|safe}} <br/> </br/>
+            <hr>
+      </div>      
+    {%endfor%}
+
+
+{%include "mainapp/pagination.html"%}
+
+{%endblock%}
+

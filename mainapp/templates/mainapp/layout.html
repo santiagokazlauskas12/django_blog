@@ -1,0 +1,75 @@
+{%load static%}
+
+<!DOCTYPE HTML>
+<html lang="es">
+
+    <head>
+        <meta-charset ="utf-8"> 
+        <title> 
+            {% block title %}
+            {%endblock%}
+        </title> 
+    <link rel="stylesheet" href= "{%static 'css/styles.css'%}">
+    </head> 
+
+    <body>
+        
+        <header>
+                <h1> Bienvenido al Blog !</h1>
+
+        </header>
+
+        <nav>
+            <ul>
+                <a href="{%url 'index'%}" class="link"> <li> Home </li></a>
+              <span class="secciones"> <a href="#" class="link"> <li> Secciones:
+              
+               <ul> 
+                    <li><a href="{%url 'articles' 'Video Juegos'%}"> video juegos </a> </li>
+                    <li> <a href="{%url 'articles' 'Musica'%}">musica </li> </a>
+                    <li><a href="{%url 'articles' 'Otros'%}"> otros </a> </li>
+                </ul>
+                
+               
+                </li></a>  </span> 
+                <a href="{%url 'nosotros'%}"class="link"> <li> Nosotros </li></a>
+                <a href="{%url 'contacto'%}"class="link"> <li> Contacto </li></a>
+                {%if user.email%}
+                <span class="mi-cuenta"><li>  Mi cuenta 
+                <ul>
+                <a href="{%url 'logout'%}"  > <li> Cerrar sesion </li></a>
+                
+                <a href="{%url 'new_articles'%}"> <li> Crear articulo </li></a>
+                
+                 <a href="{%url 'my_articles'%}"> <li>Mis articulos </li></a></span>
+                {%endif%}
+                </ul>
+                </li>
+               
+            </ul>    
+
+        </nav>
+        <div class="clearfix"> </div> 
+        <div class="barra">
+            <span class="esquina_izquierda"/>
+            <span class="relleno_barra"/>
+            <span class="esquina_derecha"/>
+        </div>
+       <div class="content">
+            <div class="box"> 
+            
+               {% block content%}
+
+
+               {%endblock%}
+            </div>   
+       </div>
+
+
+
+        <div class="clearfix"> </div> 
+        <footer>
+            Blog , todos los derechos reservados
+        </footer>
+    </body>
+</html>

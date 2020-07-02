@@ -1,0 +1,25 @@
+index - 
+    loguin  y link a formulario de crear usuario.
+    nav : - contacto / log out /  secciones / nosotros / mis notas
+
+    contacto - Formulario de contacto, que devuelva un mail automatico. 
+
+    secciones - Notas filtradas por seccion. 
+
+    mis nostas - que muestren todas tus notas x titulo y hacerle click para ver la nota
+    +y las puedas borrar.
+
+
+
+    usuario : email
+              username
+              name
+              lastname
+
+    notas 
+        in 
+        user_id 
+        titulo
+        nota.            
+
+

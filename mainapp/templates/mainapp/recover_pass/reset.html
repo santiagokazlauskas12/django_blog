@@ -1,0 +1,17 @@
+ {% extends 'mainapp/layout.html' %}
+ {%load static%}
+
+
+{%block title%}
+        Recuperar Contraseñña
+{% endblock %}	 
+
+{% block content %}
+<h3> Olvidaste tu contraseña ? </h3> 
+
+<p> Escribe tu mail y te enviaremos la informacion nescesaria para que la recuperes </p> <br/>
+    <form method="POST" > {% csrf_token %}
+    {{form}} <br>
+    <input type="submit" value="Recuperar contraseña ">
+    </form>
+{% endblock %}    

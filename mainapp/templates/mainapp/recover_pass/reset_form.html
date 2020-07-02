@@ -1,0 +1,24 @@
+ {% extends 'mainapp/layout.html' %}
+ {%load static%}
+
+
+{%block title%}
+        Recuperar Contraseñña
+{% endblock %}	 
+
+{% block content %}
+<h3> Restablecer nueva contraseña </h3> 
+<div class="user-errors">
+    {{form.errors}}
+</div>
+<p> Escribe tu nueva contraseña </p> <br/>
+    <form method="POST" > {% csrf_token %}
+    {%for f in form%}
+        {{f.label}}</br>
+        {{f}}</br>
+        
+    {%endfor%} 
+        <br>
+    <input type="submit" value="Recuperar contraseña ">
+    </form>
+{% endblock %}    
